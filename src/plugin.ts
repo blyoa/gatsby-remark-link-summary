@@ -14,6 +14,9 @@ const deploymentDirName = 'public'
 const cacheCatalogFileName = 'catalog.json'
 const cacheItemDirName = 'items'
 
+let storeOpen = false
+const store = new CachedSiteSummaryStore()
+
 interface ScrapingOptions {
   rules: Rule[]
   gotOptions?: Options
@@ -210,8 +213,10 @@ export default async (
 ) => {
   const { cacheRootDirPath = os.tmpdir() } = pluginOptions
   const catalogFilePath = path.join(cacheRootDirPath, cacheCatalogFileName)
-  const store: CachedSiteSummaryStore = new CachedSiteSummaryStore()
-  await store.open(catalogFilePath)
+  if (!storeOpen) {
+    storeOpen = true
+    await store.open(catalogFilePath)
+  }
 
   await visit(
     markdownAST,

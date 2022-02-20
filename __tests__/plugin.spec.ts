@@ -6,7 +6,6 @@ import path from 'path'
 import { remark } from 'remark'
 import { removePosition } from 'unist-util-remove-position'
 import { deployRemoteFile } from '../src/deploy'
-import plugin from '../src/plugin'
 import { CachedSiteSummaryStore, SiteSummary } from '../src/store'
 
 jest.mock('fs/promises')
@@ -19,8 +18,13 @@ jest.mock('../src/deploy', () => ({
 }))
 
 describe('plugin', () => {
+  let plugin: typeof import('../src/plugin').default
+
   beforeEach(() => {
     jest.resetAllMocks()
+    jest.isolateModules(async () => {
+      plugin = require('../src/plugin').default
+    })
     jest.useRealTimers()
   })
 
