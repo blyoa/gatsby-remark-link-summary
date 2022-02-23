@@ -37,14 +37,13 @@ describe('plugin', () => {
       mockStore.prototype.findItem.mockReturnValueOnce(null)
       mockStore.prototype.updateItem.mockReturnValueOnce(undefined)
       mockStore.prototype.sync.mockReturnValueOnce(Promise.resolve())
-      let counter = -1
-      ;(got as unknown as jest.Mock).mockReturnValue({
-        text: jest.fn(() => {
-          counter += 1
-          return Promise.resolve(
-            `<html><head><title>title${counter}</title></head></html>`
-          )
-        }),
+      ;(got as unknown as jest.Mock).mockReturnValueOnce({
+        body: `<html><head><title>title0</title></head></html>`,
+        url: 'https://example.com',
+      })
+      ;(got as unknown as jest.Mock).mockReturnValueOnce({
+        body: `<html><head><title>title1</title></head></html>`,
+        url: 'https://example.com/path/to',
       })
 
       const markdownAST = removePosition(
@@ -155,15 +154,13 @@ describe('plugin', () => {
       mockStore.prototype.findItem.mockReturnValueOnce(null)
       mockStore.prototype.updateItem.mockReturnValueOnce(undefined)
       mockStore.prototype.sync.mockReturnValueOnce(Promise.resolve())
-
-      let counter = -1
-      ;(got as unknown as jest.Mock).mockReturnValue({
-        text: jest.fn(() => {
-          counter += 1
-          return Promise.resolve(
-            `<html><head><title>title${counter}</title></head></html>`
-          )
-        }),
+      ;(got as unknown as jest.Mock).mockReturnValueOnce({
+        body: `<html><head><title>title0</title></head></html>`,
+        url: 'https://example.com',
+      })
+      ;(got as unknown as jest.Mock).mockReturnValueOnce({
+        body: `<html><head><title>title1</title></head></html>`,
+        url: 'https://www.example.com',
       })
 
       const markdownAST = removePosition(
@@ -315,12 +312,9 @@ describe('plugin', () => {
       mockStore.prototype.findItem.mockReturnValueOnce(null)
       mockStore.prototype.updateItem.mockReturnValueOnce(undefined)
       mockStore.prototype.sync.mockReturnValueOnce(Promise.resolve())
-      ;(got as unknown as jest.Mock).mockReturnValue({
-        text: jest.fn(() => {
-          return Promise.resolve(
-            `<html><head><title>title</title></head></html>`
-          )
-        }),
+      ;(got as unknown as jest.Mock).mockReturnValueOnce({
+        body: `<html><head><title>title</title></head></html>`,
+        url: 'https://example.com',
       })
 
       const markdownAST = removePosition(
@@ -541,12 +535,9 @@ describe('plugin', () => {
       })
       mockStore.prototype.updateItem.mockReturnValueOnce(undefined)
       mockStore.prototype.sync.mockReturnValueOnce(Promise.resolve())
-      ;(got as unknown as jest.Mock).mockReturnValue({
-        text: jest.fn(() => {
-          return Promise.resolve(
-            `<html><head><title>title</title></head></html>`
-          )
-        }),
+      ;(got as unknown as jest.Mock).mockReturnValueOnce({
+        body: `<html><head><title>title</title></head></html>`,
+        url: 'https://example.com',
       })
 
       const markdownAST = removePosition(
@@ -614,12 +605,9 @@ describe('plugin', () => {
       mockStore.prototype.findItem.mockReturnValueOnce(null)
       mockStore.prototype.updateItem.mockReturnValueOnce(undefined)
       mockStore.prototype.sync.mockReturnValueOnce(Promise.resolve())
-      ;(got as unknown as jest.Mock).mockReturnValue({
-        text: jest.fn(() => {
-          return Promise.resolve(
-            `<html><head><title>title</title></head></html>`
-          )
-        }),
+      ;(got as unknown as jest.Mock).mockReturnValueOnce({
+        body: `<html><head><title>title</title></head></html>`,
+        url: 'https://example.com',
       })
 
       const markdownAST = removePosition(

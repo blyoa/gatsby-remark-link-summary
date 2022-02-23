@@ -71,12 +71,12 @@ async function fetchMetadata(
   ) {
     metadata = cachedItem.metadata
   } else {
-    const html = await got(link.url, {
+    const resp = await got(link.url, {
       ...gotOptions,
       isStream: false,
-      resolveBodyOnly: true,
+      resolveBodyOnly: false,
       responseType: 'text',
-    }).text()
+    })
 
     const scrape = metascraper(rules)
     // Metadata defined in the 'metascraper' package has named properties
@@ -85,8 +85,8 @@ async function fetchMetadata(
     // no properties are owned when no rules are specified.
     // Record<string, string> is probably a more appropriate type for metadata.
     metadata = (await scrape({
-      url: link.url,
-      html,
+      url: resp.url,
+      html: resp.body,
     })) as unknown as Record<string, string>
     store.updateItem(link.url, {
       metadata,
