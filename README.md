@@ -82,7 +82,7 @@ plugins: [
 
 | name | type |  description |
 |:---|:---|:---|
-| `cacheRootDirPath` | `string | undefined` |  A directory to place remote files fetched by `cacheRemoteFile` of `HTMLGeneratorParams` and a catalog file about the fetched files and scraped metadata. If this option is `undefined`, the catalog file is not saved. |
+| `cacheRootDirPath` | `string \| undefined` |  A directory to place remote files fetched by `cacheRemoteFile` of `HTMLGeneratorParams` and a catalog file about the fetched files and scraped metadata. If this option is `undefined`, the catalog file is not saved. |
 | `destinationSubDirPath` | `string` |  A subdirectory of the root directory (i.e., `public` directory) to place remote files fetched in the second argument of `generator`. |
 | `sites` | `SiteOptions[]` | Node generator options for sites. |
 
@@ -90,11 +90,11 @@ plugins: [
 
 | name | type |  description |
 |:---|:---|:---|
-| `pattern` | `RegExp | (node: Link) => boolean` |  A target link node to be substituted. `RegExp` specifies URLs of the link node to be substituted, and the function returns whether the link node should be substituted or not. `Link` is the type defined in [mdast](https://github.com/syntax-tree/mdast/blob/4.0.0/#link) package. |
-| `generator` | `(params: HTMLGeneratorParams) => string | Node | Promise<string | Node>` | A function to generate the node that substitute a link node. |
+| `pattern` | `RegExp \| (node: Link) => boolean` |  A target link node to be substituted. `RegExp` specifies URLs of the link node to be substituted, and the function returns whether the link node should be substituted or not. `Link` is the type defined in [mdast](https://github.com/syntax-tree/mdast/blob/4.0.0/#link) package. |
+| `generator` | `(params: HTMLGeneratorParams) => string \| Node \| Promise<string \| Node>` | A function to generate the node that substitute a link node. |
 | `rules` | `Rule[]` | Rules for [metascraper](https://github.com/microlinkhq/metascraper/blob/v5.25.8/README.md#importing-rules). |
-| `gotOptions` | `Options[] | undefined` | Options for [got](https://github.com/sindresorhus/got/blob/v11.8.3/readme.md). |
-| `cacheExpirationSecond` | `number | undefined` | The expiration second of scraped metadata and fetched remote files. The metadata and the path to the fetched remote file are reused until this expiration second reaches.<br /><br />If this option is `undefined`, the fetched metadata and remote files never expire.  |
+| `gotOptions` | `Options[] \| undefined` | Options for [got](https://github.com/sindresorhus/got/blob/v11.8.3/readme.md). |
+| `cacheExpirationSecond` | `number \| undefined` | The expiration second of scraped metadata and fetched remote files. The metadata and the path to the fetched remote file are reused until this expiration second reaches.<br /><br />If this option is `undefined`, the fetched metadata and remote files never expire.  |
 
 #### HTMLGeneratorParams
 
