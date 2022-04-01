@@ -369,7 +369,7 @@ your-style-file.css
   overflow: hidden;
 }
 
-.large-image-summary-card__description__large-image-summary {
+.large-image-summary-card__description__summary {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
