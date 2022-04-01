@@ -83,7 +83,7 @@ plugins: [
 | name | type |  description |
 |:---|:---|:---|
 | `cacheRootDirPath` | `string \| undefined` |  A directory to place remote files fetched by `cacheRemoteFile` of `HTMLGeneratorParams` and a catalog file about the fetched files and scraped metadata. If this option is `undefined`, the catalog file is not saved. |
-| `destinationSubDirPath` | `string` |  A subdirectory of the root directory (i.e., `public` directory) to place remote files fetched in the second argument of `generator`. |
+| `destinationSubDirPath` | `string` |  A subdirectory of the directory for built artifacts (i.e., the `public` directory) to place remote files fetched in the second argument of `generator`. |
 | `sites` | `SiteOptions[]` | Node generator options for sites. |
 
 #### SiteOptions
@@ -94,14 +94,14 @@ plugins: [
 | `generator` | `(params: HTMLGeneratorParams) => string \| Node \| Promise<string \| Node>` | A function to generate the node that substitute a link node. |
 | `rules` | `Rule[]` | Rules for [metascraper](https://github.com/microlinkhq/metascraper/blob/v5.25.8/README.md#importing-rules). |
 | `gotOptions` | `Options[] \| undefined` | Options for [got](https://github.com/sindresorhus/got/blob/v11.8.3/readme.md). |
-| `cacheExpirationSecond` | `number \| undefined` | The expiration second of scraped metadata and fetched remote files. The metadata and the path to the fetched remote file are reused until this expiration second reaches.<br /><br />If this option is `undefined`, the fetched metadata and remote files never expire.  |
+| `cacheExpirationSecond` | `number \| undefined` | The expiration second of scraped metadata and fetched remote files. The metadata and the path to the fetched remote file are reused until this expiration second reaches.<br /><br />If this option is `undefined`, the fetched metadata and the fetched remote files never expire.  |
 
 #### HTMLGeneratorParams
 
 | name | type |  description |
 |:---|:---|:---|
 | `metadata` | `Record<string, string>` |  Metadata scraped by metascraper. |
-| `orignalNode` | `Link` | An original link node substituted by `generator`. |
+| `orignalNode` | `Link` | An original link node that `generator` substitutes. |
 | `cacheRemoteFile` | `(fileURL: string, persistent?: boolean) => Promise<string>` | A function to fetch a remote file and returns the path to the fetched file in `destinationSubDirPath`. `fileURL` is the URL of the remote file. When `persistent` is true, the fetched file is also saved in `cachedRootDirPath`.  |
 
 
