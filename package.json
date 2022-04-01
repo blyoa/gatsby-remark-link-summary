@@ -1,7 +1,7 @@
 {
   "name": "gatsby-remark-link-summary",
   "description": "Gatsby plugin to scrape link nodes and replace the link nodes to your designed summary nodes using scraped data",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "blyoa",
   "dependencies": {
     "@types/error-cause": "^1.0.1",
