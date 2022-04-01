@@ -209,7 +209,7 @@ your-style-file.css
   width: 14rem;
   height: 10rem;
   object-fit: cover;
-  border-left: 1px solid #e5e5e5;
+  border-inline-start: 1px solid #e5e5e5;
 }
 
 .summary-card__description {
@@ -233,7 +233,7 @@ your-style-file.css
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-  margin-top: 0.4rem;
+  margin-block-start: 0.4rem;
   font-size: 0.8rem;
   max-height: calc(1.6rem * 1.5);
   overflow: hidden;
@@ -241,7 +241,7 @@ your-style-file.css
 }
 
 .summary-card__description__url {
-  margin-top: 0.6rem;
+  margin-block-start: 0.6rem;
   font-size: 0.8rem;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -350,7 +350,7 @@ your-style-file.css
 .large-image-summary-card__image {
   width: 100%;
   object-fit: cover;
-  border-bottom: 1px solid #e5e5e5;
+  border-block-end: 1px solid #e5e5e5;
 }
 
 .large-image-summary-card__description {
