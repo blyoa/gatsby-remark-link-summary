@@ -150,14 +150,14 @@ module.exports = {
                             src="${filePath}"
                           />
                           <div class="summary-card__description">
-                            <span class="summary-card__description__title"
-                              >${title}</span
+                            <div class="summary-card__description__title"
+                              >${title}</div
                             >
-                            <span class="summary-card__description__summary"
-                              >${description}</span
+                            <div class="summary-card__description__summary"
+                              >${description}</div
                             >
-                            <span class="summary-card__description__url"
-                              >${url}</span
+                            <div class="summary-card__description__url"
+                              >${url}</div
                             >
                           </div>
                         </a>
@@ -294,14 +294,14 @@ module.exports = {
                             src="${filePath}"
                           />
                           <div class="large-image-summary-card__description">
-                            <span class="large-image-summary-card__description__title"
-                              >${title}</span
+                            <div class="large-image-summary-card__description__title"
+                              >${title}</div
                             >
-                            <span class="large-image-summary-card__description__summary"
-                              >${description}</span
+                            <div class="large-image-summary-card__description__summary"
+                              >${description}</div
                             >
-                            <span class="large-image-summary-card__description__url"
-                              >${url}</span
+                            <div class="large-image-summary-card__description__url"
+                              >${url}</div
                             >
                           </div>
                         </a>
