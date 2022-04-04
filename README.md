@@ -9,6 +9,20 @@ using scraped data (e.g. og:title, og:image, og:description).
 
 ## Example Output
 
+This plugin can convert text links in a markdown file to links with images as follows:
+
+**from**
+
+```md
+[--small-card--](https://www.npmjs.com/package/gatsby-remark-remove-cjk-breaks)
+[--large-card--](https://github.com/blyoa/gatsby-remark-remove-cjk-breaks)
+```
+
+**to**
+
+![card with small image](https://raw.githubusercontent.com/blyoa/gatsby-remark-link-summary/main/examples/card-with-small-image/sample.png)
+![card with large image](https://raw.githubusercontent.com/blyoa/gatsby-remark-link-summary/main/examples/card-with-large-image/sample.png)
+
 
 ## Installation
 
