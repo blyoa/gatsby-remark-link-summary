@@ -70,9 +70,10 @@ plugins: [
                 // e.g.
                 // [--summary-card--](https://example.com)
                 pattern: (node) => {
-                  if (n.children.length === 0) return false
-                  const [firstChild] = n.children
+                  if (node.children.length === 0) return false
+                  const [firstChild] = node.children
                   return  (firstChild.type === 'text' && firstChild.value === '--summary-card--')
+                  // NOTE: The URL of a link node can be obtained from `node.url`
                 },
                 generator: async ({ metadata: { url, title, image }, cacheRemoteFile }) => {
                   const deployedPath = await cacheRemoteFile(image, true)
