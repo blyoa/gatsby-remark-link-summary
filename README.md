@@ -14,8 +14,8 @@ This plugin can convert text links in a markdown file to links with images as fo
 **from**
 
 ```md
-[--small-card--](https://www.npmjs.com/package/gatsby-remark-remove-cjk-breaks)
-[--large-card--](https://github.com/blyoa/gatsby-remark-remove-cjk-breaks)
+[--small-card--](https://www.npmjs.com/package/gatsby-remark-link-summary)
+[--large-card--](https://github.com/blyoa/gatsby-remark-link-summary)
 ```
 
 **to**
