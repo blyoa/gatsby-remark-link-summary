@@ -11,7 +11,7 @@
     "es-aggregate-error": "^1.0.8",
     "eslint-plugin-n": "^15.2.3",
     "file-type": "^16.5.3",
-    "got": "^11.8.5",
+    "got": "^12.5.3",
     "metascraper": "^5.29.13",
     "valid-url": "^1.0.9"
   },
